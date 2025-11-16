@@ -1,0 +1,33 @@
+# Environment variables
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+
+# uv
+.uv/
+uv.lock
+CODE_MODE_DESIGN.md
+debug_schema.py
+inspect_pdf.py
+CODE_MODE_PATTERN_ANALYSIS.md
+test_simple.py
+test_quick_code.py

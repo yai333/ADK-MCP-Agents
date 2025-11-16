@@ -98,12 +98,6 @@ This causes Google ADK/Gemini to crash with:
 AttributeError: 'list' object has no attribute 'items'
 ```
 
-### Impact
-
-- **~1% of MCP tools** are affected (based on testing 84+ tools)
-- **Affected server**: `@mcp-z/mcp-pdf` (in the `create-pdf` tool)
-- **Clean servers**: filesystem, playwright, memory, github, everything, etc.
-
 ### Cross-Provider Compatibility
 
 Tuple validation is broadly unsupported:
