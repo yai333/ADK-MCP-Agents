@@ -1,5 +1,5 @@
 """Test the direct agent with MCP tool calls"""
-
+import os
 import asyncio
 from google.adk.runners import Runner
 from google.adk.sessions import InMemorySessionService
@@ -57,8 +57,6 @@ async def main():
         "TEST: Calculate and Save to PDF"
     )
 
-    # Test: BigQuery
-    import os
     project = os.getenv("BIGQUERY_PROJECT", "lively-metrics-295911")
     dataset = os.getenv("BIGQUERY_DATASET", "analytics_254171871")
     await test_agent(
