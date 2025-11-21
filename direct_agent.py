@@ -21,22 +21,6 @@ for server_name, config in mcp_config.MCP_SERVERS.items():
     )
     mcp_toolsets.append(toolset)
 
-
-async def initialize_mcp_tools():
-    """Initialize all MCP tool sessions before agent uses them"""
-    print("\n[Direct Agent] Pre-initializing MCP tools...")
-    for toolset in mcp_toolsets:
-        try:
-            # Create a session to initialize the MCP connection
-            session = await toolset._mcp_session_manager.create_session()
-            tools_list = await session.list_tools()
-            prefix = toolset.tool_name_prefix.rstrip('_')
-            print(f"  ✓ {prefix}: {len(tools_list.tools)} tools loaded")
-        except Exception as e:
-            print(f"  ✗ Failed to initialize {toolset.tool_name_prefix}: {e}")
-    print("[Direct Agent] MCP tools ready\n")
-
-
 direct_agent = Agent(
     name="direct_mcp_agent",
     model="gemini-2.5-flash",
